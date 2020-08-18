@@ -1,21 +1,23 @@
-<span *ngIf="!isEmpty(service.todaysWeather)" >
-<h3>Today</h3>
-<img src='https://www.metaweather.com/static/img/weather/{{service.todaysWeather.weather_state_abbr}}.svg' class="weather-icon">
-<div>{{service.todaysWeather.weather_state_name}}</div>
-<div>Min: {{ service.todaysWeather.min_temp | temperature }} </div>
-<div>Max: {{service.todaysWeather.max_temp | temperature }}</div>
-<div class="wind">
-  <span class="dir" [ngStyle]="{'transform': 'rotate('+service.todaysWeather.wind_direction+'deg)'}"></span>
-  <span>{{service.todaysWeather.wind_speed| speed }}</span>
-</div>
-<div><b>Humidity</b></div>
-<div>{{service.todaysWeather.humidity}}%</div>
-<div><b>Visibility</b></div>
-<div>{{service.todaysWeather.visibility | number: '1.0-1'}} miles</div>
-<div><b>Pressure</b></div>
-<div>{{service.todaysWeather.air_pressure | number: '1.0-1'}}mb</div>
+<mat-card class="aside" *ngIf="!isEmpty(service.todaysWeather)" >
+  <mat-card-content>
+    <h3>Today</h3>
+    <img src='https://www.metaweather.com/static/img/weather/{{service.todaysWeather.weather_state_abbr}}.svg' class="weather-icon">
+    <div>{{service.todaysWeather.weather_state_name}}</div>
+    <div>Min: {{ service.todaysWeather.min_temp | temperature }} </div>
+    <div>Max: {{service.todaysWeather.max_temp | temperature }}</div>
+    <div class="wind">
+      <span class="dir" [ngStyle]="{'transform': 'rotate('+service.todaysWeather.wind_direction+'deg)'}"></span>
+      <span>{{service.todaysWeather.wind_speed| speed }}</span>
+    </div>
+    <div><b>Humidity</b></div>
+    <div>{{service.todaysWeather.humidity}}%</div>
+    <div><b>Visibility</b></div>
+    <div>{{service.todaysWeather.visibility | number: '1.0-1'}} miles</div>
+    <div><b>Pressure</b></div>
+    <div>{{service.todaysWeather.air_pressure | number: '1.0-1'}}mb</div>
 
-<div><b>Confidence</b></div>
-<div>{{service.todaysWeather.predictability}}%</div>
-</span>
+    <div><b>Confidence</b></div>
+    <div>{{service.todaysWeather.predictability}}%</div>
+  </mat-card-content>
+</mat-card>
 

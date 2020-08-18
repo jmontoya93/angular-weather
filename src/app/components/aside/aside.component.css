@@ -1,12 +1,24 @@
 .wind .dir {
   display: inline-block;
-    width: 1em;
-    height: 1em;
-    background: url('../../../assets/windarrow.svg');
-    background-size: 100% 100%;
+  width: 1em;
+  height: 1em;
+  background: url('../../../assets/windarrow.svg');
+  background-size: 100% 100%;
 }
 
 .weather-icon {
   width: 30px;
   height: 30px;
+}
+
+.aside {
+  margin-left: 2%;
+  display: inline-block;
+  width: 20%;
+}
+
+@media only screen and (max-width: 425px) {
+  .aside {
+    width: 85%;
+  }
 }
