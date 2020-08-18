@@ -1,0 +1,8 @@
+<div class="selector">
+  <mat-form-field >
+  <mat-label>Choose a location</mat-label>
+  <mat-select [(value)]="locationSelect" (selectionChange)="getSelectedLocation()">
+    <mat-option *ngFor="let location of locationList" [value]="location.value">{{location.label}}</mat-option>
+  </mat-select>
+  </mat-form-field>
+</div>
