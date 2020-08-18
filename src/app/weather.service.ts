@@ -53,14 +53,14 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getLocation(selectedLocation: string): Observable<any> {
-    const locationUrl = `/api/location/search/?query=${selectedLocation}`;
+    const locationUrl = `https://www.metaweather.com/api/location/search/?query=${selectedLocation}`;
     return this.http.get(locationUrl).pipe(
       map(location => location[0])
     );
   }
 
   getLocationInfo(woeid: string): Observable<any> {
-    const locationInfoUrl = `/api/location/${woeid}/`;
+    const locationInfoUrl = `https://www.metaweather.com/api/location/${woeid}/`;
     return this.http.get(locationInfoUrl);
   }
 }
