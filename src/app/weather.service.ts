@@ -61,6 +61,9 @@ export class WeatherService {
 
   getLocationInfo(woeid: string): Observable<any> {
     const locationInfoUrl = `https://www.metaweather.com/api/location/${woeid}/`;
+    /*return this.http.get(locationInfoUrl).pipe(map(
+      (info: any) => info.consolidated_weather
+    ));*/
     return this.http.get(locationInfoUrl);
   }
 }

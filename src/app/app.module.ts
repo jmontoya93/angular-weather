@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { AgGridModule } from 'ag-grid-angular';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { SpeedPipe } from './pipes/speed.pipe';
     BrowserAnimationsModule,
     MatSelectModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

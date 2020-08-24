@@ -14,9 +14,25 @@ export class MainContentComponent implements OnInit {
   highcharts = Highcharts;
   chartOptions = this.service.chartOptions;
 
-  constructor(private service: WeatherService) { }
+  columnDefs = [
+      {headerName: 'Min', field: 'min_temp' },
+      {headerName: 'Max', field: 'max_temp' },
+      {headerName: 'Temp', field: 'the_temp'}
+  ];
+  rowData: any;
+
+  constructor(private service: WeatherService) {}
 
   ngOnInit() {
+    // this.loadGrid();
+  }
+
+  loadGrid() {
+    this.service.getLocation('bogotá').subscribe(
+      location => {
+        this.rowData = this.service.getLocationInfo(location.woeid);
+      }
+    );
   }
 
 }
